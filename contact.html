@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load widget_tweaks %}
+{% block contents %}
+
+<div class="bg-image-container d bg-cover bg-center max-h-full" style="background-image: url('{% static 'images/work_station.jpg' %}');">
+     <div class="pt-[10%] pl-[20%] ">
+         <h1 class="text-slate-50 font-bold text-7xl">Contact Us</h1><br>
+         <p class="text-slate-50 text-2xl">No. 1 IT Services Company in Nigeria</p>
+     </div>
+
+     
+     <div class="md:flex mt-[10%] ml-40 gap-10 pb-[12%]">
+      
+      
+    <div class="">
+        <form method="post" class="text-center">
+            {% csrf_token %}
+            {% render_field form.name placeholder=form.name.label class="bg-white mb-1 border-red-500 "%}
+            {% render_field form.email placeholder=form.email.label class="bg-white mb-2 border-red-500"%}<br>
+            {% render_field form.phone_number placeholder=form.phone_number.label class="bg-white mb-1 border-red-500"%}
+            {% render_field form.subject placeholder=form.subject.label class="bg-white mb-2 border-red-500"%}<br>
+            {% render_field form.message placeholder=form.message.label class="bg-white w-[26.1rem] h-[5rem] mt-1 border-red-500"%}<br>
+            
+            {% comment %} {{form.as_p}} {% endcomment %}
+            <button class="bg-orange-400 rounded-sm p-2 ml-[84%] text-white font-bold hover:w-24" type="submit">submit</button>
+        </form>
+    </div>
+    
+    <div class="space-y-3 text-blue-800">
+        <h3 class="font-bold">Office Address</h3>
+        <p>Second Floor, Infinity Trust<br>
+            House, 11 Kaura Namoda,<br>
+            Off Faskari Crescent,<br>
+            Area 3, Garki, Abuja.</p>
+            
+            <h4 class="font-bold">Telephone</h4>
+            <p>(+234) 806 2751 729</p>
+            
+            <h4 class="font-bold">E-mail Address</h4>
+            <p>torbitalimited@gmail.com<br>info@torbitalimited.com</p>
+            
+        </div>
+        
+    </div>
+</div>
+    {% endblock contents %}
+
+    {% block pre_footer %}{% endblock pre_footer %}

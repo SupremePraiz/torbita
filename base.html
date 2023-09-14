@@ -1,0 +1,61 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Torbita</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body>
+		
+		<header class="bg-blue-950 fixed top-0 left-0 right-0 flex p-2 justify-between">
+			<img src="{% static 'images/torbita_logo.png' %}" alt="torbita_logo" width="30" height="30">
+			<ul class="flex text-white space-x-2 text-xs">
+				<li class="hover:text-green-400"><a href="{% url 'home_page' %}">home</a></li>
+				<li class="hover:text-green-400"><a href="{% url 'contact_page' %}">contact</a></li>
+				<li class="hover:text-green-400"><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+				
+			</ul>
+		</header>
+
+		{% block contents %}
+
+		{% endblock contents %}
+
+
+		{% block pre_footer %}
+		<div class="md:flex gap-6 justify-center">
+
+			<div class="text-center bg-white p-4">
+				<h4 class="font-bold">OFFICE ADDRESS</h4>
+				<p>Second Floor, Infinity Trust House, 11</p>
+					<p> Kaura Namoda,</p>
+					<p>Off Faskari Crescent,</p>
+					<p>Area 3, Garki, Abuja.</p>
+			</div>
+
+			<div class="text-center bg-white p-4">
+				<h4 class="font-bold">CALL US</h4>
+				<p>(+234) 806 2751 729</p>
+			</div>
+
+			<div class="text-center bg-white p-4">
+				<h4 class="font-bold">EMAIL US</h4>
+				<p>torbitalimited@gmail.com</p>
+			</div>
+		</div>
+		
+		{% endblock pre_footer %}
+
+
+		{% block footer %}
+		<div class="bg-blue-950 pl-20 pt-3 pb-3">
+			<p class="text-white text-xs">Copyright ©2021 | A Torbita Limited Design. All Rights Reserved.</p>
+		</div>
+		{% endblock footer %}
+
+	</body>
+</html>
